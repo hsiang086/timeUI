@@ -16,7 +16,7 @@ void signalHandler(int signal) {
 void exitHandler(void) {
     printf("\033[H\033[J");
     printf("Ending program...\n");
-    printf("\033[?25h");  // Show cursor
+    printf("\033[?25h");
     fflush(stdout);
 }
 
@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
         printf("Usage: %s [options]\n", argv[0]);
         printf("Options:\n");
         printf("  -h, --help        Show this help message\n");
-        printf("  -t, --theme TYPE  Set theme (dark/light)\n");
+        printf("  -t, --theme TYPE  Set theme (dark/light/matrix)\n");
         FreeParser(p);
         FreeResult(r);
         return 0;
@@ -77,7 +77,6 @@ int main(int argc, char **argv) {
             break;
         }
         PrintClock(c);
-        usleep(1000000);
     }
 
     FreeParser(p);

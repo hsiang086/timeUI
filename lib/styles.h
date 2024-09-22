@@ -8,6 +8,7 @@ typedef struct {
     char *color;
     char *font;
     int shape;
+    bool matrix_effect;
 } Styles;
 
 Styles* NewStyles(enum Themes theme);

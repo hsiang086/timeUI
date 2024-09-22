@@ -5,7 +5,8 @@
 enum Themes {
     Default,
     Dark,
-    Light
+    Light,
+    Matrix
 };
 
 typedef struct {

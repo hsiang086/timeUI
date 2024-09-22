@@ -37,7 +37,7 @@ Result* Parse(Parser *p) {
         }
 
         if (p->argv[i][0] != '-') {
-            continue;  // Skip non-option arguments
+            continue;
         }
 
         if (strcmp(p->argv[i], "-h") == 0 || strcmp(p->argv[i], "--help") == 0) {
@@ -47,8 +47,10 @@ Result* Parse(Parser *p) {
                 r->theme = Dark;
             } else if (strcmp(p->argv[i + 1], "light") == 0) {
                 r->theme = Light;
+            } else if (strcmp(p->argv[i + 1], "matrix") == 0) {
+                r->theme = Matrix;
             }
-            i++;  // Skip the theme argument
+            i++;
         } else {
             fprintf(stderr, "Warning: Unknown option %s\n", p->argv[i]);
         }
